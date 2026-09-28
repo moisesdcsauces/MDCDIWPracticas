@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1.1 - Moi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 5px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            table-layout: fixed;
+            & td{
+                text-align: center;
+                padding: 10px;
+            }
+        }
+        table:nth-of-type(1){ 
+            & td:nth-of-type(1) {
+                background-color: #FF0000;
+            }
+            & td:nth-of-type(2) {
+                background-color: #00FF00;
+            }
+            & td:nth-of-type(3) {
+                background-color: #0000FF;
+            }           
+        }
+        table:nth-of-type(2){ 
+            & td:nth-of-type(1) {
+                background-color: #FFFF00;
+            }
+            & td:nth-of-type(2) {
+                background-color: #FF00FF;
+            }
+            & td:nth-of-type(3) {
+                background-color: #0000FF;
+            }  
+            & td:nth-of-type(4) {
+                background-color: #00FFFF;
+            }  
+            & td:nth-of-type(5) {
+                background-color: #00FF00;
+            }          
+        }   
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Colores Primarios</caption>
+        <tr>
+            <td>#FF0000</td>
+            <td>#00FF00</td>
+            <td>#0000FF</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Colores Secundarios</caption>
+        <tr>
+            <td>#FFFF00</td>
+            <td>#FF00FF</td>
+            <td>#0000FF</td>
+            <td>#00FFFF</td>
+            <td>#00FF00</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Para hacer los colores mas claros Suma en hexadecimal</caption>
+        <tr>
+            <td>#FFFF80</td>
+            <td>#FF8080</td>
+            <td>#FF80FF</td>
+            <td>#8080FF</td>
+            <td>#80FFFF</td>
+            <td>#80FF80</td>
+        </tr>
+
+        <tr>
+            <td>#FFFFC0</td>
+            <td>#FFC0C0</td>
+            <td>#FFC0FF</td>
+            <td>#C0C0FF</td>
+            <td>#C0FFFF</td>
+            <td>#C0FFC0</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>Para hacer los colores mas oscuros Resta en hexadecimal</caption>
+        <tr>
+            <td>#C0C000</td>
+            <td>#00C000</td>
+            <td>#C000C0</td>
+            <td>#0000C0</td>
+            <td>#00C0C0</td>
+            <td>#00C000</td>
+        </tr>
+
+        <tr>
+            <td>#808000</td>
+            <td>#008000</td>
+            <td>#800080</td>
+            <td>#000080</td>
+            <td>#008080</td>
+            <td>#008000</td>
+        </tr>
+    </table>
+</body>
+</html>
