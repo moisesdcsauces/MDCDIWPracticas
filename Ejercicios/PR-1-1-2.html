@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1.1.2 - Moi</title>
+    <style>
+        body{
+            margin: 5px;
+        }
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        div{
+            width: 33%;
+            height: 48px;
+            background-color: #00ffea;
+            display: inline-block;
+            text-align: center;
+            font-weight: bold;
+            &:nth-of-type(1){
+                background-color: red;
+            }
+            &:nth-of-type(2){
+                background-color: green;
+            }
+            &:nth-of-type(3){
+                background-color: blue;
+            }
+        }
+        span{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            line-height: 48px;
+            &.hide{
+                display: none;
+            }
+        }
+        div:nth-of-type(1):hover {
+            & .v{display:none}
+            & span.hide{
+                display: block;
+                background-color: #00ffff;
+            }
+        }
+ 
+        div:nth-of-type(2):hover {
+            & .v{display:none}
+            & span.hide{
+                display: block;
+                background-color: #ff00ff;
+            }
+        }
+ 
+        div:nth-of-type(3):hover {
+            & .v{display:none}
+            & span.hide{
+                display: block;
+                background-color: #ffff00;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Colores RGB, al pasar el ratón por encima, muestran el color complementario</h2>
+        <div>
+            <span class="v">Color Rojo #FF000</span>
+            <span class="hide">Color Cyan #00FFFF</span>
+        </div>
+        <div>
+            <span class="v">Color Verde #00FF00</span>
+            <span class="hide">Color Magenta #FF00FF</span>
+        </div>
+        <div>
+            <span class="v">Color Azul #0000FF</span>
+            <span class="hide">Color Amarillo #FFFF00</span>
+        </div>
+    </main>
+</body>
+</html>
