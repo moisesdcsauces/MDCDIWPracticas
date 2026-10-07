@@ -8,10 +8,8 @@
       * {
         box-sizing: border-box;
         font-family: sans-serif;
-      }
-
-      body {
-        margin: 5px;
+        margin: 0;
+        padding: 0;
       }
 
       header {
@@ -29,22 +27,66 @@
         width: calc(100% / 3 - 4px);
 
         &:nth-of-type(1) {
-          text-align: end;
+          text-align: center;
         }
 
         &:nth-of-type(2) {
           text-align: center;
         }
+
+        &:nth-of-type(3) {
+          text-align: center;
+        }
       }
 
-      nav, main, aside{
+      nav, main, aside {
         display: inline-block;
-        height: 60vh;
+        vertical-align: top;
+        height: 68vh;
       }
 
-      nav, aside{
+      nav, aside {
         width: 20%;
-        background: red;
+        background: #ff002b;
+        padding: 5px;
+      }
+
+      nav {
+        & ul {
+          list-style: none;
+          background-color: #dddddd;
+          padding: 2px;
+        }
+      }
+
+      main {
+        width: calc(60% - 8px);
+        background-color: #cccccc;
+        margin: 0 -4px;
+
+        & article {
+          margin-bottom: 12px;
+
+          & h2, & h3 {
+            text-align: center;
+          }
+
+          & p:nth-of-type(3) {
+            text-align: center;
+          }
+        }
+      }
+
+      aside {
+        & p, & details {
+          background-color: #dddddd;
+        }
+      }
+
+      footer {
+        background-color: #555555;
+        text-align: center;
+        padding: 18px 0;
       }
     </style>
   </head>
@@ -64,10 +106,10 @@
       </header>
       <nav>
         <ul>
-          <li><a href="#">Opcion 1</a></li>
-          <li><a href="#">Opcion 2</a></li>
-          <li><a href="#">Opcion 3</a></li>
-          <li><a href="#">Opcion 4</a></li>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Opciones</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contacto</a></li>
         </ul>
       </nav>
       <main>
