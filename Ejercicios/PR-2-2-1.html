@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 2.2.1 - Moi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px 40px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        body > div {
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+            margin-bottom: 20px;
+        }
+
+        p {
+            background-color: #c0c0c0;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .tag, .list2, .list4 {
+            border-right: 1px solid #a9d4e9;
+            padding-right: 20px;
+        }
+
+        .paragraph p:first-child {
+            background-color: #105a96;
+            color: black;
+        }
+        .paragraph p:last-child {
+            background-color: #a45a18;
+        }
+
+        .tag p:first-of-type {
+            background-color: #8bcdec;
+        }
+        .tag div:first-of-type {
+            background-color: #ffff00;
+            padding: 5px 10px;
+            margin: 10px 0;
+        }
+
+        .list ul {
+            padding-left: 20px;
+        }
+        .list li {
+            margin: 2px 0;
+            width: 60%; 
+        }
+        .list li:nth-child(2),
+        .list li:nth-last-child(2) {
+            background-color: red;
+        }
+        .list li:nth-child(4) {
+            background-color: #c0c0c0;
+        }
+
+        .list2 p:nth-of-type(2) {
+            background-color: #243288;
+            color: white;
+        }
+        .list2 strong:nth-last-child(3) {
+            background-color: #b5853b;
+            color: white;
+            display: inline-block;
+        }
+
+        .list3 p:only-child {
+            background-color: #7df812;
+        }
+
+        .list4 span:only-of-type {
+            background-color: #f34f3b;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Pseudo-clases</h1>
+    <div class="paragraph">
+        :first-child y :last-child
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+        <p>Paragraph 4</p>
+    </div>
+    <div class="tag">
+        :first-of-type y :last-of-type
+        <p>Paragraph one</p>
+        <span>text in span</span>
+        <p>Paragraph two2</p>
+        <strong>Text in strong</strong>
+        <div>This is a div</div>
+        <p>Paragraph three</p>
+    </div>
+    <div class="list">
+        :nth-child() y :nth-last-child()
+        <ul>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+            <li>Option 5</li>
+            <li>Option 6</li>
+        </ul>
+    </div>
+    <div class="list2">
+        :nth-of-type() y :nth-last-child()
+        <p>Paragraph one</p>
+        <span>text in span</span>
+        <p>Paragraph two2</p>
+        <strong>Text in strong</strong>
+        <div>This is a div</div>
+        <p>Paragraph three</p>
+    </div>
+
+    <div class="list3">
+        :only-child
+        <p>single paragraph</p>
+    </div>
+
+    <div class="list4">
+        :only-of-type()
+        <p>Paragraph one</p>
+        <span>text in span</span>
+        <p>Paragraph two2</p>
+        <p>Paragraph three</p>
+    </div>
+</body>
+
+</html>
