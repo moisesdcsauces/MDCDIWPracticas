@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practica 2.2.3 - Moi</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        width: 95%;
+        margin: 5px;
+        font-family: sans-serif;
+      }
+      .container {
+        width: 100%;
+        border: 1px solid black;
+        padding: 5px;
+      }
+      a {
+        font-family: Impact, sans-serif;
+        display: inline-block;
+        width: 128px;
+        height: 40px;
+        text-align: center;
+        line-height: 35px;
+        text-decoration: none;
+      }
+      nav a {
+        font-family: Impact, sans-serif;
+        text-align: center;
+        &:first-child {
+          background-color: #ff1493;
+        }
+        &:last-child {
+          background-color: #ff6347;
+        }
+        &:nth-child(2) {
+          background-color: #bc8f8f;
+        }
+
+        line-height: 40px;
+        margin-right: 40px;
+      }
+
+      article {
+        height: 30vh;
+        margin-bottom: 60px;
+        & h2 {
+          text-align: left;
+        }
+        & a {
+            display: inline-block;
+          background: #008000;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          margin-bottom: 5px;
+        }
+        &:nth-of-type(1){
+            background: grey;
+            color: white;
+        }
+        &:nth-of-type(2){
+            background: orange;
+        }
+        &:nth-of-type(3){
+            background: cyan;
+        }
+        &:target{
+            font-family: 'Courier New', Courier, monospace;
+            background-color: black;
+            color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="ini"></h2>
+      <nav>
+        <a href="#a1">Primero</a>
+        <a href="#a2">Segundo</a>
+        <a href="#a3">Tercero</a>
+      </nav>
+      <article id="a1">
+        <h2>Articulo 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut
+          provident quasi nostrum sed ratione repellendus! Modi soluta eligendi
+          veritatis ipsum nemo, eaque, magni recusandae nisi qui consequuntur
+          ducimus possimus?
+        </p>
+        <a href="#ini">Volver</a>
+      </article>
+      <article id="a2">
+        <h2>Articulo 2</h2>
+        <p>
+          Aspernatur quisquam explicabo, impedit veritatis esse quos porro
+          temporibus reiciendis nam. Accusamus omnis est velit pariatur,
+          molestias nihil officiis animi ipsa magni aperiam soluta. Quisquam
+          officia esse perferendis repudiandae pariatur!
+        </p>
+        <a href="#ini">Volver</a>
+      </article>
+      <article id="a3">
+        <h2>Articulo 3</h2>
+        <p>
+          Impedit placeat omnis error iusto corrupti atque dolore quibusdam quam
+          consequatur fugit laudantium, vitae repudiandae quasi voluptate,
+          corporis quas et incidunt assumenda, optio repellendus. Accusamus
+          sequi iusto alias labore modi.
+        </p>
+        <a href="#ini">Volver</a>
+      </article>
+    </div>
+  </body>
+</html>
