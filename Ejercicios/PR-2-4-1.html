@@ -1,101 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 2.4.1 - Moi</title>
     <style>
-        *{
+        * {
             box-sizing: border-box;
             font-family: Verdana, Tahoma, sans-serif;
         }
-        body{
+
+        body {
+            margin: 5px;
+        }
+
+        .container {
             width: 90%;
             background: #fcf7bb;
+            min-width: 580px;
+        }
+
+        fieldset:nth-of-type(1) {
+
+            label,
+            input {
+                display: inline-block;
+                width: 200px;
+                height: 48px;
+                border-radius: 4px;
+            }
+
+            input:nth-of-type(1) {
+                width: 350px;
+            }
+
+            input:nth-of-type(2) {
+                width: 400px;
+                border: none;
+                background: pink;
+            }
+
+            input:nth-of-type(3) {
+                width: 400px;
+                border: 1px solid #000;
+                background: aquamarine;
+            }
+        }
+
+        fieldset:nth-of-type(2) {
+            table {
+                width: 100%;
+                table-layout: fixed;
+
+                td {
+                    width: 50%;
+                    height: 48px;
+                    background: #cec2f9;
+                    padding-left: 15px;
+                }
+            }
+        }
+
+        fieldset:nth-of-type(3) {
+            padding-bottom: 30px;
+
+            span:nth-of-type(2) {
+                display: inline-block;
+                margin-top: 20px;
+            }
+        }
+
+        input[type="submit"] {
+            display: block;
+            background: red;
+            margin: auto;
+            width: max-content;
+            height: 48px;
+            border-radius: 6px;
+        }
+        input{
+            &:invalid{
+                
+            }
+            background: red;
         }
     </style>
 </head>
+
 <body>
-    <br class="container">
-        <fieldset>
-            <legend>:Pseudo-clases en formularios</legend>
+    <div class="container">
+        <form action="">
+            <fieldset>
+                <legend>:Pseudo-clases en formularios</legend>
 
-            <label for="nombre">:autofocus</label>
-            <input type="text" id="nom" placeholder="Nombre">
+                <label for="nombre">:autofocus</label>
+                <input type="text" id="nom" size="30" placeholder="Nombre">
+                <br>
 
-            <label for="apel">:required</label>
-            <input type="text" id="apel" placeholder="Apellidos" required>
+                <label for="apel">:required</label>
+                <input type="text" id="apel" placeholder="Apellidos" required>
+                <br>
 
-            <label for="email">:valid/:invalid</label>
-            <input type="email" id="email" placeholder="mail@mail.com">
+                <label for="email">:valid/:invalid</label>
+                <input type="email" id="email" placeholder="mail@mail.com">
+                <br>
 
-            <label for="pwd">Password (8min):</label>
-            <input type="password" id="pwd" minlength="8">
-        </fieldset>
+                <label for="pwd">Password (8min):</label>
+                <input type="password" id="pwd" minlength="8">
+                <br>
+            </fieldset>
 
-        <fieldset>
-            <legend>file, color, time</legend>
-            <table>
-                <tr>
-                    <td>
-                        <label for="file">Archivo a subir:</label>
-                        <input type="file" id="file" placeholder="Ningun archivo seleccionado">
-                    </td>
-                    <td>
-                        <label for="color">Elige color:</label>
-                        <input type="color" id="color">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="date">Fecha de pedido</label>
-                        <input type="date" id="date">
-                    </td>
-                    <td>
-                        <label for="time">Hora</label>
-                        <input type="time" id="time">
-                    </td>
-                </tr>
-            </table>
-        </fieldset>
+            <fieldset>
+                <legend>file, color, time</legend>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="file">Archivo a subir:</label>
+                            <input type="file" id="file" placeholder="Ningun archivo seleccionado">
+                        </td>
+                        <td>
+                            <label for="color">Elige color:</label>
+                            <input type="color" id="color">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="date">Fecha de pedido</label>
+                            <input type="date" id="date">
+                        </td>
+                        <td>
+                            <label for="time">Hora</label>
+                            <input type="time" id="time">
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
 
-        <br>
-            <legend>:checked, :in-range/:out-range</legend>
-
-            <span>Sexo:</span>
-            <input type="radio" name="sexo" id="man">
-            <label for="man">Hombre</label>
-
-            <input type="radio" name="sexo" id="woman" checked>
-            <label for="woman">Mujer</label>
             <br>
+            <fieldset>
+                <legend>:checked, :in-range/:out-range</legend>
 
-            <span>Aficiones:</span>
-            <input type="checkbox" name="hobbies" id="music">
-            <label for="music">Musica</label>
+                <span>Sexo:</span>
+                <input type="radio" name="sexo" id="man">
+                <label for="man">Hombre</label>
 
-            <input type="checkbox" name="hobbies" id="sport">
-            <label for="sport">Deportes</label>
+                <input type="radio" name="sexo" id="woman" checked>
+                <label for="woman">Mujer</label>
+                <br>
 
-            <input type="checkbox" name="hobbies" id="reading">
-            <label for="reading">Lectura</label>
+                <span>Aficiones:</span>
+                <input type="checkbox" name="hobbies" id="music">
+                <label for="music">Musica</label>
 
-            <input type="checkbox" name="hobbies" id="cooking">
-            <label for="cooking">Cocina</label>
+                <input type="checkbox" name="hobbies" id="sport">
+                <label for="sport">Deportes</label>
 
-            <br></br>
+                <input type="checkbox" name="hobbies" id="reading">
+                <label for="reading">Lectura</label>
 
-            <label for="age">Edad(1-120):</label>
-            <input type="number" id="age" min="1" max="120" placeholder="1">
+                <input type="checkbox" name="hobbies" id="cooking">
+                <label for="cooking">Cocina</label>
 
-            <label for="search">Buscar</label>
-            <input type="search" id="search">
-            <span>&#x1F50D;</span>
-            <br></br>
+                <br></br>
 
-        </fieldset>
-        <input type="submit" value="Enviar datos">
-        <button type="submit">Enviar datos</button>
+                <label for="age">Edad(1-120):</label>
+                <input type="number" id="age" min="1" max="120" placeholder="1">
+
+                <label for="search">Buscar</label>
+                <input type="search" id="search">
+                <span>&#x1F50D;</span>
+                <br>
+
+            </fieldset>
+            <input type="submit" value="Enviar datos">
+        </form>
     </div>
 </body>
+
 </html>
