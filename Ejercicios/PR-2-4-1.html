@@ -79,11 +79,9 @@
             height: 48px;
             border-radius: 6px;
         }
-        input{
-            &:invalid{
-                
-            }
-            background: red;
+
+        email:valid {
+            background: #cec2f9;
         }
     </style>
 </head>
@@ -176,6 +174,42 @@
             <input type="submit" value="Enviar datos">
         </form>
     </div>
+
+    <form action="">
+        <p>Lenguajes de programacion</p>
+        <input type="text" list="lgPrg" id="">
+        <datalist id="lgPrg">
+            <option value="C++"></option>
+            <option value="Java"></option>
+            <option value="PHP"></option>
+            <option value="C#"></option>
+            <option value="Javascript"></option>
+        </datalist>
+
+        <br>
+
+        <p>HORA</p>
+        <input type="time" list="timeT" id="">
+        <datalist id="timeT">
+            <option value="10:00"></option>
+            <option value="12:30"></option>
+            <option value="14:50"></option>
+            <option value="16:30"></option>
+            <option value="18:00"></option>
+        </datalist>
+
+        <br>
+
+        <p>Imagen</p>
+        <input type="file" accept="image/jpeg" capture="user" id="img">
+
+        <br>
+
+        <p>Video</p>
+        <input type="file" accept="video/mpeg" capture="environment" id="vdo">
+
+
+    </form>
 </body>
 
 </html>
