@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento - Relative</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-size: 2rem;
+        }
+        div{
+            position: relative;
+        }
+        .box5{
+            width: 600px;
+            height: 400px;
+            background: grey;
+        }
+        .box1, .box2{
+            width: 200px;
+            height: 200px;
+        }
+        .box3, .box4{
+            width: 300px;
+            height: 100px;
+            left: 100px;
+        }
+        .box1{
+            background: yellow;
+            left: 330px;
+            bottom: 350px;
+        }
+        .box2{
+            background: red;
+            bottom: 450px;
+            left: 40px;
+        }
+        .box3{
+            background: blue;
+            top: -700px;
+        }
+        .box4{
+            background: green;
+            bottom: 670px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box5"></div>
+    <div class="box1">2</div>
+    <div class="box2">3</div>
+    <div class="box3">4</div>
+    <div class="box4">5</div>
+    
+</body>
+</html>
