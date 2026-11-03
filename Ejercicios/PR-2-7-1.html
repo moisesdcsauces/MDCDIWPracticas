@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2-7-1 - Moi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 5px;
+        }
+
+        a {
+            display: inline-block;
+            width: 112px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background: red;
+            border-radius: 6px 6px 0 0;
+            text-decoration: none;
+            font-family: impact, sans-serif;
+            letter-spacing: 1px;
+            margin: 0px 24px;
+            color: #000;
+
+            &:nth-of-type(1) {
+                background: #67e767;
+            }
+
+            &:nth-of-type(2) {
+                background: #5178e4;
+            }
+
+            &:nth-of-type(3) {
+                background: #ebb7d9;
+            }
+        }
+
+        article {
+            position: absolute;
+            width: 550px;
+            height: 300px;
+            padding: 10px;
+            font-weight: bold;
+            &:nth-of-type(1) {
+                background: #67e767;
+                z-index: 1;
+            }
+
+            &:nth-of-type(2) {
+                background: #5178e4;
+            }
+
+            &:nth-of-type(3) {
+                background: #ebb7d9;
+            }
+        }
+
+        article:target {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="#p1">Primera</a>
+        <a href="#p2">Segunda</a>
+        <a href="#p3">Tercera</a>
+        <article id="p1">Este es el contenido de la 1 PESTAÑA</article>
+        <article id="p2">Este es el contenido de la 2 PESTAÑA</article>
+        <article id="p3">Este es el contenido de la 3 PESTAÑA</article>
+    </div>
+</body>
+
+</html>
