@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2-7-1-b - Moi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            margin: 5px;
+        }
+
+        .container{
+            position: relative;
+
+        }
+        
+        input{
+            display: none;
+        }
+
+        label{
+            display: inline-block;
+            width: 112px;
+            height: 40px;
+            margin: 0px 24px;
+            font-family: Verdana, sans-serif;
+            font-weight: bold;
+            border-radius: 6px 6px 0px 0px;
+            background: #6c78bb;
+            text-align: center;
+            color: white;
+            line-height: 40px;                    
+        }
+
+        article{
+            position: absolute;
+            width: 850px;
+            height: 400px;
+            background: #ecd4b9;
+            padding: 10px;
+            font-weight: bold;
+            &:nth-of-type(1){
+                z-index: 10;
+            }
+        }
+
+        input:checked + label{
+            background: #87cefa;
+        }
+
+        input:checked + label + article{
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="radio" id="rd1" name="rdb" checked><label for="rd1">Radio 1</label>
+        <article>Este es el contenido del radio 1</article>
+        <input type="radio" id="rd2" name="rdb"><label for="rd2">Radio 2</label>
+        <article>Este es el contenido del radio 2</article>
+        <input type="radio" id="rd3" name="rdb"><label for="rd3">Radio 3</label>
+        <article>Este es el contenido del radio 3</article>
+        <input type="radio" id="rd4" name="rdb"><label for="rd4">Radio 4</label>
+        <article>Este es el contenido del radio 4</article>
+        <input type="radio" id="rd5" name="rdb"><label for="rd5">Radio 5</label>
+        <article>Este es el contenido del radio 5</article>
+    </div>
+</body>
+
+</html>
