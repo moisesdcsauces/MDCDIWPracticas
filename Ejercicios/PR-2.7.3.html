@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2.7.3 - Moi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 5px;
+        }
+
+        .container {
+            width: 95%;
+            height: 100vh;
+            background-color: #34495e;
+            border: 0.5px solid transparent;
+            padding: 2px;
+            overflow: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 72px;
+            background-color: #297777;
+            border: 1px solid white;
+            position: relative;
+
+            .hbger {
+                display: block;
+                background-color: #aaa;
+                width: 52px;
+                height: 52px;
+                margin: 9px 0px 0px 10px;
+                padding-top: 10px;
+                border-radius: 5px;
+
+                & span {
+                    display: block;
+                    width: 44px;
+                    height: 5px;
+                    background-color: white;
+                    margin: auto;
+                    box-shadow: 0px 11px 0px white, 0px 22px 0px white;
+                }
+            }
+
+            input {
+                display: none;
+                &:checked~nav {
+                    left: 0;
+                }
+            }
+
+            nav{
+                position: absolute;
+                top: 72px;
+                width: 200px;
+                height: 90vh;
+                background: #5c867a;
+                left: -100%;
+                transition: left 0.5s cubic-bezier(1, 0, 0, 1);
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 40px;
+                    text-decoration: none;
+                    color: #fff;
+                    border-bottom: 1px solid #bbb;
+                    padding-left: 10px;
+                    line-height: 40px;
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <input type="checkbox" name="rd" id="openNav">
+
+            <label for="openNav" class="hbger">
+                <span></span>
+            </label>
+
+            <nav>
+                <label for="closeNav">✕</label>
+                <a href="#">Inicio</a>
+                <a href="#">Alumnos</a>
+                <a href="#">Secretaria</a>
+                <a href="#">Profesorado</a>
+            </nav>
+        </header>
+
+
+    </div>
+</body>
+
+</html>
