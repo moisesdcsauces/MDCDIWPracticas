@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,101 +8,201 @@
     <style>
         * {
             box-sizing: border-box;
-        }
-
-        body {
-            margin: 5px;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .container {
             width: 95%;
-            height: 100vh;
-            background-color: #34495e;
-            border: 0.5px solid transparent;
-            padding: 2px;
-            overflow: hidden;
+            min-height: 100vh;
+            margin: 0 auto;
+            background: #34495e;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Imagen superior de Amazon */
+        .header1 img {
+            width: 100%;
+            display: block;
         }
 
         header {
-            width: 100%;
-            height: 72px;
-            background-color: #297777;
-            border: 1px solid white;
             position: relative;
+            width: 100%;
+            background: #232f3e;
+        }
 
-            .hbger {
-                display: block;
-                background-color: #aaa;
-                width: 52px;
-                height: 52px;
-                margin: 9px 0px 0px 10px;
-                padding-top: 10px;
-                border-radius: 5px;
+        /* Barra inferior donde va el botón Todo */
+        .sub-header {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+        }
 
-                & span {
-                    display: block;
-                    width: 44px;
-                    height: 5px;
-                    background-color: white;
-                    margin: auto;
-                    box-shadow: 0px 11px 0px white, 0px 22px 0px white;
-                }
-            }
+        input[type="radio"] {
+            display: none;
+        }
 
-            input {
-                display: none;
-                &:checked~nav {
-                    left: 0;
-                }
-            }
+        /* Lógica de apertura y cierre */
+        #openNav:checked ~ nav {
+            left: 0;
+        }
 
-            nav{
-                position: absolute;
-                top: 72px;
-                width: 200px;
-                height: 90vh;
-                background: #5c867a;
-                left: -100%;
-                transition: left 0.5s cubic-bezier(1, 0, 0, 1);
-                a{
-                    display: block;
-                    width: 100%;
-                    height: 40px;
-                    text-decoration: none;
-                    color: #fff;
-                    border-bottom: 1px solid #bbb;
-                    padding-left: 10px;
-                    line-height: 40px;
-                    &:hover{
-                        background-color: #ee87ee;
-                    }
-                }
-            }
+        #openNav:checked ~ .lblClose {
+            display: block;
+        }
+
+        #closeNav:checked ~ nav {
+            left: -100%;
+        }
+
+        /* Botón hamburguesa + Todo */
+        .lblHbger {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border: 2px solid transparent;
+            border-radius: 3px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .lblHbger:hover {
+            border: 2px solid white;
+        }
+
+        .lblHbger span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: white;
+            position: relative;
+            top: -7px;
+            box-shadow: 0px 7px 0px white, 0px 14px 0px white;
+        }
+
+        .lblHbger strong {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        /* Fondo oscuro y botón X para cerrar */
+        .lblClose {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 90;
+            cursor: pointer;
+        }
+
+        .lblClose::after {
+            content: "✕";
+            position: fixed;
+            top: 15px;
+            left: 315px;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* Menú lateral */
+        nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 300px;
+            height: 100vh;
+            background: #ffffff;
+            overflow-y: auto;
+            transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 100;
+        }
+
+        nav a {
+            display: block;
+            width: 100%;
+            height: 42px;
+            color: #111;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-decoration: none;
+            padding-left: 25px;
+            line-height: 42px;
+        }
+
+        nav a:hover {
+            background: #eaeded;
+        }
+
+        nav a:nth-of-type(1) {
+            background: #232f3e;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 700;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        nav span {
+            display: block;
+            width: 100%;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #111;
+            padding: 15px 0 5px 25px;
+            margin-top: 10px;
+            border-top: 1px solid #d5dbdb;
+        }
+
+        nav span:first-of-type {
+            border-top: none;
+            margin-top: 0;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
-            <input type="radio" name="rd" id="openNav">
-            <input type="radio" name="rd" id="closeNav">
-            <label for="openNav" class="hbger">
-                <span></span>
-                <span>Todo</span>
-            </label>
+            <div class="header1">
+                <img src="../images/barraAmazon.png" alt="Barra superior Amazon">
+            </div>
 
-            <nav>
-                <a href="#">Hola, identificate</a>
-                <a href="#">Tendencias</a>
-                <a href="#">Lo mas vendido</a>
-                <a href="#">Vender en Amazon</a>
-                <a href="#">Hola, identificate</a>
-                <a href="#">Tendencias</a>
-                <a href="#">Lo mas vendido</a>
-                <a href="#">Vender en Amazon</a>
-            </nav>
-            <label for="closeNav" class="lblClose"></label>
+            <div class="sub-header">
+                <input type="radio" name="rd" id="openNav">
+                <input type="radio" name="rd" id="closeNav">
+
+                <label for="openNav" class="lblHbger">
+                    <span></span>
+                    <strong>Todo</strong>
+                </label>
+
+                <label for="closeNav" class="lblClose"></label>
+
+                <nav>
+                    <a href="#">&#128100; Hola, identifícate</a>
+                    <span>Tendencias</span>
+                    <a href="#">Los más vendidos</a>
+                    <a href="#">Vender en Amazon</a>
+                    <span>Dispositivos y contenido de Amazon</span>
+                    <a href="#">Amazon Prime Video</a>
+                    <a href="#">Amazon Music</a>
+                    <a href="#">E-readers Kindle y eBooks</a>
+                    <span>Buscar por departamento</span>
+                    <a href="#">Libros</a>
+                    <a href="#">Cine, TV y Música</a>
+                    <a href="#">Electrónica</a>
+                    <a href="#">Informática</a>
+                    <a href="#">Hogar y cocina</a>
+                </nav>
+            </div>
         </header>
     </div>
 </body>
+
 </html>
