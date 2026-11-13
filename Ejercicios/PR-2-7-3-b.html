@@ -53,6 +53,7 @@
 
         #openNav:checked ~ .lblClose {
             display: block;
+            opacity: 1;
         }
 
         #closeNav:checked ~ nav {
@@ -93,7 +94,7 @@
         /* Fondo oscuro y botón X para cerrar */
         .lblClose {
             display: none;
-            position: absolute;
+            position: fixed;
             inset: 0;
             background: rgba(0, 0, 0, 0.7);
             z-index: 90;
