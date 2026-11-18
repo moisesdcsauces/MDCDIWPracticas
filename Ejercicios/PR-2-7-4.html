@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,18 +13,15 @@
             box-sizing: border-box;
         }
 
-        body {
-            background-color: #f0f0f0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .container {
+            width: 200px;
+            height: 200px;
+            position: relative;
         }
 
-        .container {
-            position: relative;
-            width: 300px;
-            height: 300px;
+        .circulo {
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             background: radial-gradient(
                 circle at 0% 0%,
@@ -34,31 +30,85 @@
             );
         }
 
-        .container::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
-            box-shadow: inset -15px -15px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .container::after {
+        .circulo::after {
             content: "";
             position: absolute;
             width: 145px;
             height: 18px;
             left: 50%;
-            bottom: -30px;
-            
+            bottom: -6px;
+            border-radius: 50%;
+            background: rgba(0, 0, 255, 0.555);
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .wrapper{
+            width: 500px;
+            height: 400px;
+            margin-top: 60px;
+        }
+
+        .caja1{
+            position: relative;
+            width: 300px;
+            height: 75px;
+            background: grey;
+            border-radius: 5px;
+            color: white;
+            line-height: 75px;
+            padding-left: 20px;
+            font-size: 2rem;
+            &::before{
+                content: "";
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                display: block;
+                width: 0px;
+                border: 50px solid transparent;
+                border-bottom: 50px solid blue;
+                /*
+                border-top: 50px solid red;
+                border-left: 50px solid yellow;
+                border-right: 50px solid green;
+                */
+                top: -100px;
+                left: 150px;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                display: block;
+                width: 0px;
+                border: 25px solid transparent;
+                border-top: 50px solid blue;
+                /*
+                border-top: 50px solid red;
+                border-left: 50px solid yellow;
+                border-right: 50px solid green;
+                */
+                top: 75px;
+                left: 25px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="container"></div>
+    <div class="container">
+        <div class="circulo"></div>
+    </div>
+
+    <h2>Cajas con triangulo de señalizacion</h2>
+
+    <div class="wrapper">
+        <div class="caja1">
+            A
+        </div>
+    </div>
 </body>
 
 </html>
