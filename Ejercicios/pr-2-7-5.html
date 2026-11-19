@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2.7.5 - Moi</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-weight: 900;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            margin: 5px;
+        }        
+
+        .container{
+            width: 100%;
+            height: auto;
+            background: rgb(240, 122, 195);
+        }
+
+        ul{
+            list-style: none;
+            /*background: #aebbcc;*/
+        }
+
+        li{
+            position: relative;
+            height: 100%;
+            width: 25%;
+        }
+
+        a{
+            display: block;
+            width: 100%;
+            height: inherit;
+            text-decoration: none;
+            text-align: center;
+            line-height: 52px;
+            &:hover{
+                background: #d2d2d2;
+            }
+        }
+
+        .mnu{
+            list-style: none;
+            position: relative;
+            width: 100%;
+            height: 52px;
+            font-size: 0;
+            & > li{
+                display: inline-block;
+                font-size: 1rem;
+                background: #aebbcc;
+                border-right: 0.5px solid grey;  
+                            
+            }
+        }
+
+        .sbmnu1, .sbmnu2{
+            width: 100%;
+            display: none;
+        }
+
+        .sbmnu1{
+            position: absolute;
+            top: 52px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <ul class="mnu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Oficina</a></li>
+                <li><a href="#">Instituto&nbsp; &#x25BC</a>
+                    <ul class="sbmnu1">
+                        <li><a href="#">Fisica-Quimica</a></li>
+                        <li><a href="#">Ingles</a></li>
+                        <li><a href="#">Matematicas &nbsp; &#x25BA;</a>
+                            <ul class="sbmnu2">
+                                <li><a href="#">Academicas</a></li>
+                                <li><a href="#">Aplicadas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Alumnos</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
