@@ -20,56 +20,94 @@
 
         .container{
             width: 100%;
-            height: auto;
-            background: rgb(240, 122, 195);
+            height: 600px;
+            background: #999364;
+            border: 1px solid #6b7d9e;
+            position: relative;
+        }
+
+        nav{
+            width: 100%;
+            background: #aebbcc;
         }
 
         ul{
             list-style: none;
-            /*background: #aebbcc;*/
         }
 
         li{
             position: relative;
-            height: 100%;
-            width: 25%;
         }
 
         a{
             display: block;
             width: 100%;
-            height: inherit;
+            height: 100%;
             text-decoration: none;
             text-align: center;
             line-height: 52px;
+            color: #2e3b8e;
             &:hover{
                 background: #d2d2d2;
             }
         }
 
         .mnu{
-            list-style: none;
             position: relative;
-            width: 100%;
+            width: 75%;
             height: 52px;
             font-size: 0;
             & > li{
                 display: inline-block;
+                width: 25%;
+                height: 100%;
                 font-size: 1rem;
                 background: #aebbcc;
-                border-right: 0.5px solid grey;  
-                            
+                &:hover > .sbmnu1{
+                    display: block;
+                }
             }
         }
 
         .sbmnu1, .sbmnu2{
             width: 100%;
             display: none;
+            position: absolute;
+            z-index: 10;
+            & > li{
+                width: 100%;
+                height: 52px;
+                background: #aebbcc;
+                position: relative;
+            }
         }
 
         .sbmnu1{
-            position: absolute;
-            top: 52px;
+            top: 51px;
+            left: 0;
+            & > li:hover > .sbmnu2{
+                display: block;
+            }
+        }
+
+        .sbmnu2{
+            top: 0;
+            left: 99%;
+        }
+
+        main{          
+            width: 100%;
+            height: 52px;
+            position: relative;
+            padding-top: 700px;
+            & h1{
+                position: absolute;
+                top: 65%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 1.4rem;
+                color: black;
+            }
         }
     </style>
 </head>
@@ -95,6 +133,10 @@
                 <li><a href="#">Alumnos</a></li>
             </ul>
         </nav>
+
+        <main>
+            <h1>MENU DESPLEGABLE (DropDown) con Subniveles</h1>
+        </main>
     </div>
 </body>
 
