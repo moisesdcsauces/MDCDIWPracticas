@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX1-1: Botones de efectos con pseudoelementos :before y :after - Moi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: rgb(230, 136, 217);
+        }
+
+        .boton {
+            position: absolute;
+            width: 164px;
+            height: 64px;
+            background: rgb(1, 61, 1);
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 5%;
+            line-height: 60px;
+            top: 100px;
+            left: 100px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 4px;
+                width: 64px;
+                display: block;
+                background-color: white;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 64px;
+                height: 4px;
+                right: 0;
+                display: block;
+                background-color: white;
+                transition: cubic-bezier(0.075, 0.82, 0.165, 1);               
+            }
+
+            .boton:hover::after {
+                height: 100px;
+            }
+
+        }
+
+        .boton2 {
+            position: absolute;
+            width: 164px;
+            height: 64px;
+            background: rgb(1, 61, 1);
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            border-radius: 5%;
+            line-height: 60px;
+            left: 100px;
+            bottom: 100px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 64px;
+                width: 5px;
+                display: block;
+                background-color: white;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 5px;
+                height: 64px;
+                right: 0;
+                display: block;
+                background-color: white;
+                transition: cubic-bezier(0.075, 0.82, 0.165, 1);               
+            }
+
+            .boton2:hover::after {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="boton">
+            BOTON
+        </div>
+        <div class="boton2">
+            BOTON2
+        </div>
+    </div>
+</body>
+
+</html>
