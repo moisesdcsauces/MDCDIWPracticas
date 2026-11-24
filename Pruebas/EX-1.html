@@ -30,9 +30,10 @@
             font-size: 2rem;
             font-weight: bold;
             border-radius: 5%;
-            line-height: 60px;
+            line-height: 64px;
             top: 100px;
             left: 100px;
+            cursor: pointer;
 
             &::before {
                 content: "";
@@ -41,25 +42,25 @@
                 bottom: 0;
                 height: 4px;
                 width: 64px;
-                display: block;
                 background-color: white;
+                transition: all 0.5s ease-in-out;
             }
 
             &::after {
                 content: "";
                 position: absolute;
+                top: 0;
+                right: 0;
                 width: 64px;
                 height: 4px;
-                right: 0;
-                display: block;
                 background-color: white;
-                transition: cubic-bezier(0.075, 0.82, 0.165, 1);               
+                transition: all 0.5s ease-in-out;
             }
 
-            .boton:hover::after {
-                height: 100px;
+            &:hover::before,
+            &:hover::after {
+                width: 100%;
             }
-
         }
 
         .boton2 {
@@ -72,34 +73,36 @@
             font-size: 2rem;
             font-weight: bold;
             border-radius: 5%;
-            line-height: 60px;
+            line-height: 64px;
             left: 100px;
             bottom: 100px;
+            cursor: pointer;
 
             &::before {
                 content: "";
                 position: absolute;
                 left: 0;
                 bottom: 0;
-                height: 64px;
+                height: 32px;
                 width: 5px;
-                display: block;
                 background-color: white;
+                transition: all 0.5s ease-in-out;
             }
 
             &::after {
                 content: "";
                 position: absolute;
-                width: 5px;
-                height: 64px;
+                top: 0;
                 right: 0;
-                display: block;
+                width: 5px;
+                height: 32px;
                 background-color: white;
-                transition: cubic-bezier(0.075, 0.82, 0.165, 1);               
+                transition: all 0.5s ease-in-out;
             }
 
-            .boton2:hover::after {
-                width: 100px;
+            &:hover::before,
+            &:hover::after {
+                height: 100%;
             }
         }
     </style>
